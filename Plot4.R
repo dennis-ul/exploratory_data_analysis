@@ -23,7 +23,7 @@ data_final<-cbind(datetime, df)
 #Plot
 png(file=".//Plot4.png")
 
-par(mfrow=c(2,2), mar = c(5,5,2,2))
+par(mfrow=c(2,2))
 plot(data_final$datetime,data_final$Global_active_power, type="l", xlab="",ylab="Global Active Power")
 plot(data_final$datetime, data_final$Voltage, type="l", ylab="Voltage", xlab="datetime")
 plot(data_final$datetime,data_final$Sub_metering_1, type="l", xlab="",ylab="Energy sub metering")
