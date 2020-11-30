@@ -21,18 +21,17 @@ data_final<-cbind(datetime, df)
 
 
 #Plot
-png(file=".//Plot3.png")
+png(file=".//Plot4.png")
 
-par(mfrow=c(2,2))
+par(mfrow=c(2,2), mar = c(5,5,2,2))
 plot(data_final$datetime,data_final$Global_active_power, type="l", xlab="",ylab="Global Active Power")
 plot(data_final$datetime, data_final$Voltage, type="l", ylab="Voltage", xlab="datetime")
 plot(data_final$datetime,data_final$Sub_metering_1, type="l", xlab="",ylab="Energy sub metering")
 lines(data_final$datetime, data_final$Sub_metering_2, col="red")
 lines(data_final$datetime, data_final$Sub_metering_3, col="blue")
-legend("topright", cex=0.5, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),lty=1, col=c("black", "red", "blue"))
+legend("topright", cex=0.7, bty="n", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),lty=1, col=c("black", "red", "blue"))
 plot(data_final$datetime, data_final$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
 
-?legend
 
 dev.off()
 
